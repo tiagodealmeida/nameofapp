@@ -1,6 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Products</h1>
+<div class="header">
+  <h1>Products</h1>
+</div>
+
+<div class="row products">
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <%= image_tag("bike01.jpg", class: "img-responsive bike01", alt: "Bullhorn Fixie") %>
+  </div>
+
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <%= image_tag("bike02.jpg", class: "img-responsive bike02", alt: "Pista Fixie") %>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <%= image_tag("bike03.jpg", class: "img-responsive bike03", alt: "City Fixie") %>
+  </div>
+
+</div>
+
+<!--
 
 <table>
   <thead>
@@ -29,3 +47,5 @@
 <br>
 
 <%= link_to 'New Product', new_product_path %>
+
+-->
