@@ -4,12 +4,12 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @products = Product.limit(3)
   end
 
   # GET /products/1
   # GET /products/1.json
-  def show  
+  def show
   end
 
   # GET /products/new
