@@ -41,10 +41,12 @@
             <li><%= link_to "Contact", static_pages_contact_path %></li>
           </ul>
           <form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="product search">
-            </div>
-            <button type="submit" class="btn btn-default">Search</button>
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button">Go!</button>
+                </span>
+              </div>
           </form>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
