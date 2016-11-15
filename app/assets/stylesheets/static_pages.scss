@@ -6,6 +6,8 @@ body {
   padding-top: 70px;
 }
 
+// general typography
+
 h1,
 h2,
 p {
@@ -32,6 +34,8 @@ p {
   margin-right: auto;
 }
 
+// footer
+
 .footer {
   position: fixed;
   height: 50px;
@@ -44,6 +48,8 @@ p {
 .text-muted {
   margin: 20px 0;
 }
+
+// carousel
 
 .carousel-inner > .item > img {
   margin: 0 auto;
