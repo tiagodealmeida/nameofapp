@@ -72,7 +72,7 @@ p {
 .carousel-caption {
   border: 1px solid black;
   border-radius: 8px;
-  width: 300px;
+  width: auto;
   color: #34495e;
   letter-spacing: 2px;
   background-color: #f5f5f5;
@@ -83,4 +83,10 @@ p {
 
 .glyphicon {
   color: #34495e;
+}
+
+.carousel-control.left, .carousel-control.right {
+  background-image: none !important;
+  filter: none !important;
+  progid:none !important;
 }
