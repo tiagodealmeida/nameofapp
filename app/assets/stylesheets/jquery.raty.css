@@ -44,3 +44,11 @@
 .star-half-png:before {
   content: "\f123";
 }
+
+.rated {
+  text-align: center;
+}
+
+.rating {
+  text-align: center;
+}
