@@ -31,7 +31,11 @@
   </div>
 </p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+
 <%= render partial: "new_comment" %>
 <%= render partial: "comments" %>
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %><br>
+<div class="apple_pagination">
+<%= will_paginate @comments %>
+</div>
