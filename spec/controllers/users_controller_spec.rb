@@ -4,7 +4,6 @@ describe UsersController, :type => :controller do
 
   #let(:user) { User.create!(email: 'test2@email.com', password: 'password2') }
   let (:user) {FactoryGirl.create(:user)}
-  let (:other_user) { FactoryGirl.create(:user)}
 
   describe 'GET #show' do
     context 'User is logged in' do
