@@ -25,17 +25,24 @@
   <%= @product.price %> <span class="glyphicon glyphicon-euro"></span>
 </p>
 
+<div class="text-center">
+  <%= form_tag "/payments/create" do %>
+    <%= render partial: "shared/stripe_checkout_button" %>
+  <% end %><br>
+
+  <%= link_to 'Edit', edit_product_path(@product) %> |
+  <%= link_to 'Back', products_path %><br>
+</div>
+
 <p>
   <strong>Average Rating:</strong>
   <div class="rated" data-score="<%= @product.average_rating %>">
   </div>
 </p>
 
-
 <%= render partial: "new_comment" %>
 <%= render partial: "comments" %>
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %><br>
+
 <div class="apple_pagination">
 <%= will_paginate @comments %>
 </div>
