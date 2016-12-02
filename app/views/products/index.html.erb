@@ -2,6 +2,7 @@
 
 <div class="header">
   <h1>Products</h1>
+  <p class="new_product"><%= link_to 'Add A New Product', new_product_path %></p>
 </div>
 
 <div class="container-fluid">
@@ -9,10 +10,3 @@
     <%= render @products %>
   </div>
 </div>
-
-
-
-<% if false %>
-<!-- this code is commented out by if -->
-<%= link_to “New Product”, new_path%>
-<% end %>

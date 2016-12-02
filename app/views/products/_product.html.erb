@@ -4,5 +4,6 @@
   <p><%= product.description %></p>
   <p>Frame Color: <%= product.frame_color %></p>
   <p><%= product.price %><span class="glyphicon glyphicon-euro"></span></p>
-  <p><%= link_to 'Show / ', product %><%= link_to 'Edit / ', edit_product_path(product) %><%= link_to 'Destroy ', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <p><%= link_to 'Show / ', product %><%= link_to 'Edit / ', edit_product_path(product) %>
+  <%= link_to 'Destroy ', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
 </div>
