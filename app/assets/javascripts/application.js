@@ -15,7 +15,12 @@
 //= require turbolinks
 //= require_tree .
 
+$(".nav a").on("click", function(){
+  $(".nav").find(".active").removeClass("active");
+  $(this).parent().addClass("active");
+});
+
 $(document).on('turbolinks:load', function(){
   console.log($(".alert"));
-  $(".alert").delay(800).fadeOut(400);
+  $(".alert").delay(500).fadeOut(2000);
 });

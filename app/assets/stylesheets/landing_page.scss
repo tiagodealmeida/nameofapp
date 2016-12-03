@@ -1,0 +1,45 @@
+// carousel
+
+.carousel-inner > .item > img {
+  margin: 0 auto;
+}
+
+.carousel-indicators {
+  position: relative;
+}
+
+.carousel-indicators li {
+  background-color: WhiteSmoke;
+  background-color: rgba(70, 70, 70, 0.25);
+  border: 1px solid WhiteSmoke;
+}
+
+.carousel-indicators .active {
+  background-color: #34495e;
+}
+
+.carousel-caption {
+  border: 1px solid black;
+  border-radius: 8px;
+  width: auto;
+  color: #34495e;
+  letter-spacing: 2px;
+  background-color: #f5f5f5;
+  margin: auto;
+  opacity: 0.9;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+.glyphicon {
+  color: #34495e;
+}
+
+.carousel-control.left, .carousel-control.right {
+  background-image: none !important;
+  filter: none !important;
+  progid:none !important;
+}
+
+.glyphicon-euro {
+  font-size: 0.8em;
+}
