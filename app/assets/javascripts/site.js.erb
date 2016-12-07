@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function(){
+var refreshRating = function(){
 
   /* rating stars */
 
@@ -22,8 +22,10 @@ $(document).on('turbolinks:load', function(){
       return $(this).attr('data-score');
     }
   });
+};
 
-  /* images zoom */
+$(document).on('turbolinks:load ajaxSuccess', function() {
+  refreshRating();
 
   $('.img-zoom').elevateZoom({
     zoomType: "lens",
