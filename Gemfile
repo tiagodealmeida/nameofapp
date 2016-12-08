@@ -52,6 +52,7 @@ end
 group :production do
   # gem that communicates with PostGreSQL databases
   gem 'pg'
+  gem 'dalli'
 end
 
 

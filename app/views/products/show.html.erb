@@ -1,45 +1,49 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+<% cache @product do %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @product.name %>
+  </p>
 
-<p>
-  <strong></strong>
-  <%= image_tag(@product.image_url, width: "250", class: "img-zoom", data_zoom_image: @product.image_url) %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @product.description %>
+  </p>
 
-<p>
-  <strong>Frame Color:</strong>
-  <%= @product.frame_color %>
-</p>
+  <p>
+    <strong></strong>
+    <%= image_tag(@product.image_url, width: "250", class: "img-zoom", data_zoom_image: @product.image_url) %>
+  </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %> <span class="glyphicon glyphicon-euro"></span>
-</p>
+  <p>
+    <strong>Frame Color:</strong>
+    <%= @product.frame_color %>
+  </p>
 
-<div class="text-center">
-  <%= form_tag "/payments/create" do %>
-    <%= hidden_field_tag(:product_id, @product_id) %>
-    <%= render partial: "shared/stripe_checkout_button" %>
-  <% end %><br>
+  <p>
+    <strong>Price:</strong>
+    <%= @product.price %> <span class="glyphicon glyphicon-euro"></span>
+  </p>
 
-  <%= link_to 'Edit', edit_product_path(@product) %> |
-  <%= link_to 'Back', products_path %><br>
-</div>
+  <div class="text-center">
+    <%= form_tag "/payments/create" do %>
+      <%= hidden_field_tag(:product_id, @product_id) %>
+      <%= render partial: "shared/stripe_checkout_button" %>
+    <% end %><br>
 
-<p>
-  <strong>Average Rating:</strong>
-  <div class="rated" id="#average-rating" data-score="<%= @product.average_rating %>">
+    <%= link_to 'Edit', edit_product_path(@product) %> |
+    <%= link_to 'Back', products_path %><br>
   </div>
-</p>
+
+  <p>
+    <strong>Average Rating:</strong>
+    <div class="rated" id="#average-rating" data-score="<%= @product.average_rating %>">
+    </div>
+  </p>
+
+<% end %>  
 
 <%= render partial: "new_comment" %>
 <%= render partial: "comments" %>
