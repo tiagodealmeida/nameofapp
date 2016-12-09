@@ -70,3 +70,7 @@ gem 'rails-controller-testing'
 gem 'stripe'
 
 gem 'brakeman'
+
+gem 'redis-rails'
+
+gem 'newrelic_rpm'
