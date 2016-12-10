@@ -1,4 +1,5 @@
 Rails.application.configure do
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -53,4 +54,8 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  #generate javascript files instead of coffeescript
+  config.app_generators.javascript_engine = :javascript
+
 end

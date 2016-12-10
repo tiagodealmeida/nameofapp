@@ -84,7 +84,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  # Heroku dalli caching 
+  # Heroku dalli caching
   config.cache_store = :dalli_store,
                       (ENV["MEMCACHIER_SERVERS"] || "").split(","),
                       {:username => ENV["MEMCACHIER_USERNAME"],
@@ -94,5 +94,8 @@ Rails.application.configure do
                        :socket_failure_delay => 0.2,
                        :down_retry_delay => 60
                       }
+
+config.web_socket_server_url = "wss://tiagobikeberlin.herokuapp.com/cable"
+config.action_cable.allowed_request_origins = ['https://tiagobikeberlin.herokuapp.com', 'http://tiagobikeberlin.herokuapp.com']
 
 end
