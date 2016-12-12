@@ -1,13 +1,16 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 .apple_pagination {
+  font-family: Futura, sans-serif;
   text-align: center;
   padding: 1em;
   cursor: default;
 }
 
-.apple_pagination a, .apple_pagination span {
+.apple_pagination a,
+.apple_pagination span {
   padding: 0.2em 0.3em;
 }
 
@@ -34,6 +37,7 @@
   color: black;
 }
 
-.apple_pagination a:hover, .apple_pagination a:focus {
+.apple_pagination a:hover,
+.apple_pagination a:focus {
   text-decoration: underline;
 }
