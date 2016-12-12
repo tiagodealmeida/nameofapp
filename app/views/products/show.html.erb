@@ -1,54 +1,62 @@
-<p id="notice"><%= notice %></p>
+<div class="container product">
 
-<% cache @product do %>
+  <div class="row" data-product-id="<%= @product.id %>">
 
-  <p>
-    <strong>Name:</strong>
-    <%= @product.name %>
-  </p>
+    <p id="notice"><%= notice %></p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= @product.description %>
-  </p>
+    <% cache @product do %>
 
-  <p>
-    <strong></strong>
-    <%= image_tag(@product.image_url, width: "250", class: "img-zoom", data_zoom_image: @product.image_url) %>
-  </p>
+      <p>
+        <strong>Name:</strong>
+        <%= @product.name %>
+      </p>
 
-  <p>
-    <strong>Frame Color:</strong>
-    <%= @product.frame_color %>
-  </p>
+      <p>
+        <strong>Description:</strong>
+        <%= @product.description %>
+      </p>
 
-  <p>
-    <strong>Price:</strong>
-    <%= @product.price %> <span class="glyphicon glyphicon-euro"></span>
-  </p>
+      <p>
+        <strong></strong>
+        <%= image_tag(@product.image_url, width: "250", class: "img-zoom", data_zoom_image: @product.image_url) %>
+      </p>
 
-  <div class="text-center">
-    <%= form_tag "/payments/create" do %>
-      <%= hidden_field_tag(:product_id, @product_id) %>
-      <%= render partial: "shared/stripe_checkout_button" %>
-    <% end %><br>
+      <p>
+        <strong>Frame Color:</strong>
+        <%= @product.frame_color %>
+      </p>
 
-    <%= link_to 'Edit', edit_product_path(@product) %> |
-    <%= link_to 'Back', products_path %><br>
+      <p>
+        <strong>Price:</strong>
+        <%= @product.price %> <span class="glyphicon glyphicon-euro"></span>
+      </p>
+
+      <div class="text-center">
+        <%= form_tag "/payments/create" do %>
+          <%= hidden_field_tag(:product_id, @product_id) %>
+          <%= render partial: "shared/stripe_checkout_button" %>
+        <% end %><br>
+
+        <%= link_to 'Edit', edit_product_path(@product) %> |
+        <%= link_to 'Back', products_path %><br>
+      </div>
+
+      <p>
+        <strong>Average Rating:</strong>
+        <div class="rated" id="#average-rating" data-score="<%= @product.average_rating %>">
+        </div>
+      </p>
+
+    <% end %>
+
   </div>
 
-  <p>
-    <strong>Average Rating:</strong>
-    <div class="rated" id="#average-rating" data-score="<%= @product.average_rating %>">
-    </div>
-  </p>
+  <%= render partial: "new_comment" %>
+  <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
+  <%= render partial: "comments" %>
 
-<% end %>
+  <div class="apple_pagination">
+  <%= will_paginate @comments %>
+  </div>
 
-<%= render partial: "new_comment" %>
-<div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
-<%= render partial: "comments" %>
-
-<div class="apple_pagination">
-<%= will_paginate @comments %>
 </div>
